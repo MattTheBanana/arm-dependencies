@@ -25,6 +25,8 @@ env:
 
 jobs:
     deploy:
+        # Publishes the official Docker Hub image; this fork publishes its custom image to GHCR.
+        if: github.repository == 'automatic-ripping-machine/arm-dependencies'
         runs-on: ubuntu-latest
         permissions:
             contents: read
