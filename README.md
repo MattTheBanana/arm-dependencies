@@ -40,3 +40,13 @@ To base your docker container on `arm-dependencies`, add this to the top of your
 
 FROM automaticrippingmachine/arm-dependencies AS base
 ```
+
+
+## TrueNAS / custom dependency image
+
+This fork publishes the custom dependency base image to GHCR:
+
+- Pinned base image: `ghcr.io/mattthebanana/arm-dependencies-custom:2.0.0`
+- Moving tag: `ghcr.io/mattthebanana/arm-dependencies-custom:latest`
+
+The TrueNAS ARM image uses the pinned `2.0.0` tag. The custom workflow rebuilds and publishes both tags from `main`. For unauthenticated pulls from TrueNAS, make the GHCR package public; otherwise configure image-pull credentials in TrueNAS.
