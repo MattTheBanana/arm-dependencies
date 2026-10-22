@@ -35,5 +35,6 @@ jobs:
             with:
                 push: false
                 context: .
-                platforms: linux/amd64,linux/arm64,linux/arm/v7
+                # The TrueNAS fork publishes/uses an amd64 dependency image.
+                platforms: linux/amd64
                 tags: automatic-ripping-machine:pr${{ github.event.number }}
