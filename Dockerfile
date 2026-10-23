@@ -99,8 +99,7 @@ RUN chmod +x /install_mkv_hb_deps.sh && sleep 1 && \
 # 1668). Must run BEFORE install_handbrake.sh so HandBrake's 
 # ./configure detects the updated headers at build time. 
 COPY ./scripts/install_intel_qsv_deps.sh /install_intel_qsv_deps.sh
-RUN chmod +x /install_intel_qsv_deps.sh && sleep 1 && \ 
-    /install_intel_qsv_deps.sh
+RUN chmod +x /install_intel_qsv_deps.sh && sleep 1 && /install_intel_qsv_deps.sh
 
 COPY ./scripts/install_handbrake.sh /install_handbrake.sh
 RUN chmod +x /install_handbrake.sh && sleep 1 && \
@@ -129,10 +128,10 @@ RUN install_clean tzdata && \
 ARG VERSION
 ARG BUILD_DATE
 # set metadata
-LABEL org.opencontainers.image.source=https://github.com/automatic-ripping-machine/arm-dependencies.git
-LABEL org.opencontainers.image.url=https://github.com/automatic-ripping-machine/arm-dependencies
+LABEL org.opencontainers.image.source=https://github.com/MattTheBanana/arm-dependencies.git
+LABEL org.opencontainers.image.url=https://github.com/MattTheBanana/arm-dependencies
 LABEL org.opencontainers.image.description="Dependencies for Automatic Ripping Machine"
-LABEL org.opencontainers.image.documentation=https://raw.githubusercontent.com/automatic-ripping-machine/arm-dependencies/main/README.md
+LABEL org.opencontainers.image.documentation=https://raw.githubusercontent.com/MattTheBanana/arm-dependencies/main/README.md
 LABEL org.opencontainers.image.license=MIT
 LABEL org.opencontainers.image.version=$VERSION
 LABEL org.opencontainers.image.created=$BUILD_DATE
